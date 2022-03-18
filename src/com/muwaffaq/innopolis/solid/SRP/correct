@@ -1,0 +1,26 @@
+class Cart {
+
+    List<Product> products;
+    double totals;
+    String token;
+    
+}
+
+class cartOperations {
+
+    void addToCart(Product product, List<Product> products) {
+        products.add(product);
+    }
+
+    void removeFromCart(Product product, List<Product> products) {
+        products.remove(product);
+    }
+
+}
+
+class discountOperations {
+
+    void applyDiscount(int percentage, int totals) {
+        totals = totals * percentage;
+    }
+}
