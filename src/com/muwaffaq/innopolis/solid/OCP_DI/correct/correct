@@ -1,0 +1,53 @@
+class Calculator {
+    private double left;
+    private double right;
+    public  double calculate(Operation operation) {
+        switch (operation) {
+            case ADD:
+                addCommand r1= new addCommand();
+                return r1.add(left, right);
+            case SUBTRACT:
+                subCommand r2= new subCommand();
+                return r2.sub(left, right);
+            default:
+                multCommand r3= new multCommand();
+                return r3.mult(left, right);
+            case DIVIDE:
+                divCommand r4= new divCommand();
+                return r4.div(left, right);
+
+        }
+    }
+
+    public static void main(String[] args) {
+        CalculatorWrong calculator = new CalculatorWrong();
+        calculator.calculate(Operation.ADD);
+        calculator.calculate(Operation.ADD);
+
+    }
+
+}
+enum Operation {ADD, SUBTRACT, DIVIDE, MULTIPLICATION}
+
+class addCommand{
+    double add(double first, double second){
+        return first+second;
+    }
+}
+
+class subCommand{
+    double sub(double first, double second){
+        return first-second;
+    }
+}
+
+class divCommand{
+    double div(double first, double second){
+        return first/second;
+    }
+}
+class multCommand{
+    double mult(double first, double second){
+        return first*second;
+    }
+}
